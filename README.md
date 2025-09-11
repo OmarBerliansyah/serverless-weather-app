@@ -4,6 +4,9 @@ Welcome to **OmarCast**, a simple, modern, and functional weather application bu
 
 🌐 **[View Live Demo](https://sweater-weather.vercel.app)** ➡️
 
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/65c01c5c-e2b5-4d52-8152-9740d206286e" />
+
+
 ## Key Features
 
 This application does more than just display the temperature. Here's everything it can do:
@@ -72,3 +75,4 @@ This project was passionately created by **Omar**.
 
 
 Thanks for visiting! 🌤️
+
