@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <main class="main-container">
+        <header class="input-container">
+            <input class="city" placeholder="Enter City" type="text" />
+            <button class="search-btn">
+                <span class="material-symbols-outlined">
+                    search
+                </span>
+            </button>
+        </header>
+
+        <section class="weather" style="display: none;">
+            <div class="location-date-container">
+                <div class="location">
+                    <span class="material-symbols-outlined">
+                    location_on
+                    </span>
+                    <h4 class="country-txt">Jakarta</h4>
+                    <span id="info-btn" class="material-symbols-outlined">
+                        info
+                    </span>
+                    <div id="coord-popover" class="popover">
+                        <p>Lat: <span id="popover-lat">-</span></p>
+                        <p>Lon: <span id="popover-lon">-</span></p>
+                        <a id="gmaps-btn" href="#" target="_blank" class="popover-btn">
+                            Open in Maps
+                            <span class="material-symbols-outlined">open_in_new</span>
+                        </a>
+                    </div>
+                </div>
+                <h5 class="current-date-txt regular-txt">Thu, 11 Sep</h5>
+            </div>
+
+            <div class="weather-summary-container">
+                <img src="assets/weather/clouds.svg" class="src">
+                <div class="weather-summary-info">
+                    <h1 class="temp-txt">
+                       29 °C 
+                    </h1>
+                    <h3 class="condition-txt regular-txt">
+                       Clouds
+                    </h3>
+                </div>
+            </div>
+
+            <div class="weather-condition-container">
+            </div>
+
+            <div class="details-buttons-container">
+                <div class="button-row">
+                    <button class="details-btn active" data-view="atmosphere">
+                        <span class="material-symbols-outlined">thermostat</span>
+                        Atmosphere
+                    </button>
+                    <button class="details-btn" data-view="wind">
+                        <span class="material-symbols-outlined">air</span>
+                        Wind
+                    </button>
+                    <button class="details-btn" data-view="daylight">
+                        <span class="material-symbols-outlined">wb_sunny</span>
+                        Daylight
+                    </button>
+                </div>
+                <div class="button-row">
+                    <button class="details-btn" data-view="visibility">
+                        <span class="material-symbols-outlined">visibility</span>
+                        Visibility
+                    </button>
+                    <button class="details-btn" data-view="forecast">
+                        <span class="material-symbols-outlined">calendar_month</span>
+                        Forecast
+                    </button>
+                </div>
+            </div>
+
+            <div class="details-view-container">
+                <div id="atmosphere-view" class="details-view active">
+                    <div class="detail-item">
+                        <span class="material-symbols-outlined">device_thermostat</span>
+                        <div>
+                            <h5>Perceived Temperature</h5>
+                            <h5 id="feels-like-txt">-</h5>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="material-symbols-outlined">compress</span>
+                        <div>
+                            <h5>Air Pressure</h5>
+                            <h5 id="pressure-txt">-</h5>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="material-symbols-outlined">humidity_percentage</span>
+                        <div>
+                            <h5>Humidity</h5>
+                            <h5 id="humidity-txt">-</h5>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="material-symbols-outlined">thermostat</span>
+                        <div>
+                            <h5>Minimum Temperature</h5>
+                            <h5 id="min-txt">-</h5>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="material-symbols-outlined">thermostat</span>
+                        <div>
+                            <h5>Maximum Temperature</h5>
+                            <h5 id="max-txt">-</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                <div id="wind-view" class="details-view">
+                    <div class="detail-item">
+                        <span class="material-symbols-outlined">explore</span>
+                        <div>
+                            <h5>Direction</h5>
+                            <h5 id="wind-deg-txt">-</h5>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="material-symbols-outlined">airwave</span>
+                        <div>
+                            <h5>Wind Speed</h5>
+                            <h5 id="wind-speed-txt">-</h5>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="material-symbols-outlined">cyclone</span>
+                        <div>
+                            <h5>Gusts</h5>
+                            <h5 id="wind-gust-txt">-</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="daylight-view" class="details-view">
+                    <div class="detail-item">
+                        <span class="material-symbols-outlined">wb_sunny</span>
+                        <div>
+                            <h5>Sunrise</h5>
+                            <h5 id="sunrise-txt">-</h5>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="material-symbols-outlined">bedtime</span>
+                        <div>
+                            <h5>Sunset</h5>
+                            <h5 id="sunset-txt">-</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="visibility-view" class="details-view">
+                    <div class="detail-item">
+                        <span class="material-symbols-outlined">visibility</span>
+                        <div>
+                            <h5>Visibility</h5>
+                            <h5 id="visibility-txt">-</h5>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="material-symbols-outlined">cloud</span>
+                        <div>
+                            <h5>Cloud Coverage</h5>
+                            <h5 id="clouds-txt">-</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="forecast-view" class="details-view">
+                    <div class="forecast-container">
+                        <div class="forecast-item">
+                            <h5 class="forecast-item-date regular-txt">05 Aug</h5>
+                            <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
+                            <h5 class="forecast-item-temp">29 °C</h5>
+                        </div>
+                        <div class="forecast-item">
+                            <h5 class="forecast-item-date regular-txt">05 Aug</h5>
+                            <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
+                            <h5 class="forecast-item-temp">29 °C</h5>
+                        </div>
+                        <div class="forecast-item">
+                            <h5 class="forecast-item-date regular-txt">05 Aug</h5>
+                            <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
+                            <h5 class="forecast-item-temp">29 °C</h5>
+                        </div>
+                        <div class="forecast-item">
+                            <h5 class="forecast-item-date regular-txt">05 Aug</h5>
+                            <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
+                            <h5 class="forecast-item-temp">29 °C</h5>
+                        </div>
+                        <div class="forecast-item">
+                            <h5 class="forecast-item-date regular-txt">05 Aug</h5>
+                            <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
+                            <h5 class="forecast-item-temp">29 °C</h5>
+                        </div>
+                        <div class="forecast-item">
+                            <h5 class="forecast-item-date regular-txt">05 Aug</h5>
+                            <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
+                            <h5 class="forecast-item-temp">29 °C</h5>
+                        </div>
+                        <div class="forecast-item">
+                            <h5 class="forecast-item-date regular-txt">05 Aug</h5>
+                            <img src="assets/weather/thunderstorm.svg" class="forecast-item-img">
+                            <h5 class="forecast-item-temp">29 °C</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="search section-message">
+            <img src="assets/message/search-city.png">
+            <div>
+                <h1>Search City</h1>
+                <br />
+                <h4 class="regular-txt">
+                    Find out the weather condition of a city
+                </h4>
+            </div>
+        </section>
+
+       <section class="search section-message" style="display: none;">
+            <img src="assets/message/not-found.png" class="message-img">
+            <div>
+                <h1>Not Found!</h1>
+                <br />
+                <h4 class="regular-txt">
+                    We couldn't find the weather information for that city. 
+                </h4>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
