@@ -1,4 +1,4 @@
-﻿# SweaterWeather
+﻿# SweaterWeathers
 
 Welcome to **OmarCast**, a simple, modern, and functional weather application built with Vanilla JavaScript. This project displays current weather data and a 5-day forecast from anywhere in the world through a clean and aesthetic interface.
 
@@ -75,4 +75,5 @@ This project was passionately created by **Omar**.
 
 
 Thanks for visiting! 🌤️
+
 
