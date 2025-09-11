@@ -4,7 +4,7 @@ Developed to fulfill a task during my study at Institut Teknologi Bandung on II3
 
 🌐 **[View Live Demo](https://sweaterweathers.vercel.app)** ➡️
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/65c01c5c-e2b5-4d52-8152-9740d206286e" />
+[<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/65c01c5c-e2b5-4d52-8152-9740d206286e"/>](https://sweaterweathers.vercel.app)
 
 
 ## Key Features
@@ -75,6 +75,7 @@ This project was passionately created by **Omar**.
 
 
 Thanks for visiting! 🌤️
+
 
 
 
