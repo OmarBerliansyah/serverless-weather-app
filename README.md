@@ -2,8 +2,7 @@
 
 Developed to fulfill a task during my study at Institut Teknologi Bandung on II3160 - Integrated System Technology subject. A simple, modern, and functional weather application built with Vanilla JavaScript. This project displays current weather data and a 5-day forecast from anywhere in the world through a clean and aesthetic interface.
 
-🌐 **[View Live Demo](https://sweaterweathers.vercel.app)** ➡️
-
+**[View Live Demo](https://sweaterweathers.vercel.app)** 
 [<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/65c01c5c-e2b5-4d52-8152-9740d206286e"/>](https://sweaterweathers.vercel.app)
 
 
@@ -74,7 +73,8 @@ This project was passionately created by **Omar**.
 ---
 
 
-Thanks for visiting! 🌤️
+Thanks for visiting!
+
 
 
 
